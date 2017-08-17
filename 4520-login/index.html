@@ -1,0 +1,16 @@
+<?
+########## 로그인을 거치지 않았을 경우 회원 로그인 화면으로 되돌려보낸다. ##########
+if(!$UserID) {
+   $url = $PHP_SELF; 
+   $url = urlencode($url);
+   exit;
+}
+?>
+<html>
+<head>
+</head>
+<body>
+인증확인됐습니다.<br>
+그럼이만.
+</body>
+</html>

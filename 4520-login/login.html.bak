@@ -1,0 +1,68 @@
+<html>
+<head>
+<script language="JavaScript">
+function check(form){
+	if(form.answer.value == ""){
+	   alert("answer를 입력하세요.");
+	   form.id.focus();
+	   return false ;
+	}
+	return true;
+	/*
+	if(form.password.value==""){
+	   alert("비밀번호를 입력하세요!");
+	   form.password.focus();
+	   return false;
+	}else{
+	   return true;
+	}
+	*/
+}
+</script>
+</head>
+
+<body>
+<center>
+<?
+########## 로그인전에 사용자가 요청한 URL을 저장한다. 만일 요청한 URL이 없을 경우에는 루트디렉토리로 설정한다. ##########
+if(!$url) {
+   $url = "./";
+}
+?>
+<form name="form" method="post"  action="./login_ok.php3" onSubmit="return check(this)">
+<table width="220" border="1" cellspacing="0" cellpadding="0" bordercolordark="White" bordercolorlight="gray">
+
+<tr height= "100"> 
+<td width="97" bgcolor="#cdcdcd" align="center"><font size="-1" color="#FFFFFF">
+<b><font face="Verdana">ANSWER</font></b></font></td>
+<td  bgcolor="#FFFFFF">
+<input type=text size=20 maxlength="30" name="answer" >
+</td>
+</tr>
+<!--
+<tr> 
+<td width="97" bgcolor="#cdcdcd" align="center"><font size="-1" color="#FFFFFF">
+<b><font face="Verdana">PW</font></b></font></td>
+
+<td bgcolor="#FFFFFF">
+<input type="Password" size=20 maxlength="30" name="password">
+</td>pw
+</tr>
+-->
+
+<tr>
+<td colspan="2" align="center">&nbsp;<br>
+<input type="submit" name="Submit" value="  확 인  ">
+<input type="Button" value="  취 소  " onClick="JavaScript:history.go(-1)">
+<input type="hidden" name="url" value="<?echo("$url")?>">
+</tr>
+
+</form>
+
+<br>&nbsp;
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>        
